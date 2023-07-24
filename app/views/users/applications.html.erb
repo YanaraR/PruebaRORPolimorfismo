@@ -1,0 +1,7 @@
+<h1>Mis postulaciones</h1>
+<% current_user.applications.each do |application| %>
+  <div>
+    <h3><%= application.job_offer.title %></h3>
+    <p><%= application.job_offer.description %></p>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_with(model: job_offer, url: job_offers_path) do |form| %>
+    <% if job_offer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(job_offer.errors.count, "error") %> prohibieron que esta oferta laboral se guardara:</h2>
+  
+        <ul>
+          <% job_offer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Guardar", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  
